@@ -4,8 +4,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
-function TopMovies() {
-  const topMovies = useSelector((store) => store.home.topMovies);
+function TopTvShows() {
+  const topTvShows = useSelector((store) => store.home.topTvShows);
   const carouselSettings = {
     dots: false,
     infinite: true,
@@ -16,7 +16,7 @@ function TopMovies() {
 
   return (
     <>
-      <h2>Top Movies</h2>
+      <h2>Top TV Shows</h2>
       <div
         style={{
           // display: "flex",
@@ -26,12 +26,12 @@ function TopMovies() {
         }}
       >
         <Slider {...carouselSettings}>
-          {topMovies.map((movie) => (
+          {topTvShows.map((movie) => (
             <MovieCard
               {...{
                 image: movie.poster_path,
-                title: movie.title,
-                releaseDate: movie.release_date,
+                title: movie.original_name,
+                releaseDate: movie.first_air_date,
               }}
               key={movie.id}
             />
@@ -42,4 +42,4 @@ function TopMovies() {
   );
 }
 
-export default TopMovies;
+export default TopTvShows;

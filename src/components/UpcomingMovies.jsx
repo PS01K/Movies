@@ -4,8 +4,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
-function TopMovies() {
-  const topMovies = useSelector((store) => store.home.topMovies);
+function UpcomingMovies() {
+  const upcomingMovies = useSelector((store) => store.home.upcomingMovies);
   const carouselSettings = {
     dots: false,
     infinite: true,
@@ -16,7 +16,7 @@ function TopMovies() {
 
   return (
     <>
-      <h2>Top Movies</h2>
+      <h2>Upcoming Movies</h2>
       <div
         style={{
           // display: "flex",
@@ -26,7 +26,7 @@ function TopMovies() {
         }}
       >
         <Slider {...carouselSettings}>
-          {topMovies.map((movie) => (
+          {upcomingMovies.map((movie) => (
             <MovieCard
               {...{
                 image: movie.poster_path,
@@ -42,4 +42,4 @@ function TopMovies() {
   );
 }
 
-export default TopMovies;
+export default UpcomingMovies;

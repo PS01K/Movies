@@ -3,6 +3,8 @@ import { fetchDataFromApi } from "../utils/api";
 import { setTopMovies, setTopTvShows, setUpcomingMovies } from "../redux/homeSlice";
 import { useDispatch } from "react-redux";
 import TopMovies from "./TopMovies";
+import TopTvShows from "./TopTvShows";
+import UpcomingMovies from "./UpcomingMovies";
 
 function Home() {
   const dispatch = useDispatch();
@@ -35,6 +37,8 @@ function Home() {
     <>
       <h1>Home</h1>
       <TopMovies />
+      <TopTvShows />
+      <UpcomingMovies />
     </>
   );
 }
