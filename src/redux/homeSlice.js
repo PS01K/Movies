@@ -22,6 +22,6 @@ const homeSlice = createSlice({
   }
 })
 
-export const { setTopMovies, setTopTvShows, setUpcomingMovies } = homeSlice;
+export const { setTopMovies, setTopTvShows, setUpcomingMovies } = homeSlice.actions;
 
 export default homeSlice.reducer;
