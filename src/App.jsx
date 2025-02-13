@@ -1,22 +1,26 @@
-import { useEffect, useState } from 'react'
-import './App.css'
-import { fetchDataFromApi } from './utils/api';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import './App.css'
 import { store } from './redux/store';
 import Home from './components/Home';
+import MovieDetails from './components/MovieDetails';
 
 function App() {
-  useEffect(() => {
-    // fetchDataFromApi("/movie/11", {})
-    //   .then(data => console.log(data))
-    //   .catch(err => console.log(err));
-  });
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />
+    },
+    {
+      path: "/movie/:id",
+      element: <MovieDetails />
+    }
+  ])
 
   return (
     <>
       <Provider store={store}>
-        <h1>Movies App</h1>  
-        <Home />
+        <RouterProvider router={router} />
       </Provider>      
     </>
   )

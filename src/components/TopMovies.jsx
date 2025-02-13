@@ -12,6 +12,7 @@ function TopMovies() {
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1,
+    autoPlay: true,
   };
 
   return (
