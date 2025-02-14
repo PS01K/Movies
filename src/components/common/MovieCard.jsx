@@ -1,4 +1,6 @@
-function MovieCard(props) {
+import { Link } from "react-router-dom";
+
+function MovieCard(props) {  
   return (
     <div
       style={{
@@ -8,7 +10,12 @@ function MovieCard(props) {
         margin: "2px 6px 6px 2px",
       }}
     >
-      <img style={{ width: "100%" }} src={"https://image.tmdb.org/t/p/original" + props.image} />
+      <Link to={`/${props.entityType}/${props.id}`}>
+        <img
+          style={{ width: "100%" }}
+          src={"https://image.tmdb.org/t/p/original" + props.image}
+        />
+      </Link>
       <h2>{props.title}</h2>
       <span>{props.releaseDate}</span>
     </div>

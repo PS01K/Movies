@@ -12,7 +12,7 @@ function App() {
       element: <Home />
     },
     {
-      path: "/movie/:id",
+      path: "/:entityType/:id",
       element: <MovieDetails />
     }
   ])

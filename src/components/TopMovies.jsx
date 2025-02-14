@@ -33,6 +33,8 @@ function TopMovies() {
                 image: movie.poster_path,
                 title: movie.title,
                 releaseDate: movie.release_date,
+                id: movie.id,
+                entityType: "topMovies",
               }}
               key={movie.id}
             />

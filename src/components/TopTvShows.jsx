@@ -33,6 +33,8 @@ function TopTvShows() {
                 image: movie.poster_path,
                 title: movie.original_name,
                 releaseDate: movie.first_air_date,
+                id: movie.id,
+                entityType: "topTvShows",
               }}
               key={movie.id}
             />
